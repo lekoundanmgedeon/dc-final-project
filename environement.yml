@@ -1,0 +1,50 @@
+name: dc_env
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+
+dependencies:
+  # Core Python
+  - python=3.10
+
+  # Scientific stack
+  - numpy
+  - pandas
+  - scipy
+  - numba
+  - pytz
+
+  # Visualization + notebook
+  - matplotlib
+  - seaborn
+  - altair
+  - pydeck
+
+  # Required dependencies (missing in your env)
+  - attrs
+  - jinja2
+  - jsonschema
+  - wrapt
+  - pyyaml
+
+  # ML & Deep Learning
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-lightning
+
+  # Streamlit
+  - streamlit
+  - click
+  - pillow
+  - toml
+  - watchdog
+
+  # Networking & async
+  - aiohttp
+
+  # Optional: data formats
+  - pip
+  - pip:
+      - l0bnb       # pip-only package

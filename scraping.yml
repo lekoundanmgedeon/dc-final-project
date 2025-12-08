@@ -1,0 +1,15 @@
+name: scraping
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pandas
+  - requests
+  - beautifulsoup4
+  - lxml
+  - pip
+  - pip:
+      - selenium
+      - webdriver-manager
