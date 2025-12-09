@@ -2,3 +2,6 @@
 
 Here you can find deployed link of online application 
     https://collectools-box.streamlit.app/
+
+Here you can find presentation demo link of application
+ https://drive.google.com/file/d/1tujprWka3osdKvIs4W9IzrgNCia4JNLg/view?usp=drive_link
