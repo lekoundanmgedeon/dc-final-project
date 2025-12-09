@@ -1,5 +1,4 @@
 ====================================================================
 
-Here you can find deployed link of application 
-
-https://collectools-box.streamlit.app/
+Here you can find deployed link of online application 
+    https://collectools-box.streamlit.app/
