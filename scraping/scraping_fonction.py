@@ -90,3 +90,7 @@ def scrape_pages(base_url, total_pages):
 
     print("Scraping completed!")
     return df
+
+## I supposed to add database script here, but it's already done with notebook version
+## I Strong recommend to go in this file and check it there.!
+#### Thank you Mr Abdoul Wahab 

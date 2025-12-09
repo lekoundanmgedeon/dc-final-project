@@ -1,6 +1,6 @@
 import streamlit as st
 
-# --- CONFIG ---
+# CONFIG 
 st.set_page_config(
     page_title="CollectToolsBox | DC Final",
     layout="wide",
@@ -9,9 +9,7 @@ st.set_page_config(
 )
 
 
-
-
-# --- SIDEBAR ---
+# SIDEBAR 
 st.sidebar.title("📌 Menu")
 
 menu = st.sidebar.radio(
@@ -26,7 +24,7 @@ menu = st.sidebar.radio(
     ]
 )
 
-# --- IMPORT DES PAGES ---
+# Decomposer les cas d'utilisation en modules
 import modules.home as home
 import modules.dashboard as dashboard
 import modules.scraping as scraping
@@ -34,7 +32,7 @@ import modules.data as data
 import modules.settings as settings
 import modules.about as about
 
-# --- ROUTING ---
+# Gestions des routes utilisateurs  
 if menu == "🏠 Home":
     home.run()
 
