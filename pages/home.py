@@ -1,7 +1,7 @@
 import streamlit as st
 
 def run():
-    st.title(" Welcom to my beautiful CollectToolsBox ! ")
+    st.title(" Welcome to my beautiful CollectToolsBox ! ")
     
     # ---------------------------------------
     # General presentation

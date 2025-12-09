@@ -7,20 +7,20 @@ def run():
 
     st.write("Scrape automatiquement un site selon une URL et un nombre de pages.")
 
-    # --- INPUTS UTILISATEUR ---
+    # INPUTS UTILISATEUR 
     base_url = st.text_input(
         "URL de base (exemple : https://sn.coinafrique.com/categorie/chiens)",
         value="https://sn.coinafrique.com/categorie/chiens"
     )
 
     total_pages = st.number_input(
-        "Nombre de pages à scraper",
+        "Nomber de pages à scraper",
         min_value=1,
         max_value=50,
         value=2
     )
 
-    # --- BOUTON DE SCRAPING ---
+    #  BOUTON DE SCRAPING 
     if st.button("Lancer le scraping"):
         if not base_url.strip():
             st.error("Veuillez entrer une URL valide.")

@@ -1,7 +1,7 @@
 import streamlit as st
 
 def run():
-    st.title("❓ About / Documentation")
+    st.title("Documentation")
 
     st.subheader("🌟 Application Overview")
     st.markdown("""

@@ -4,9 +4,8 @@ import os
 import plotly.express as px
 import plotly.figure_factory as ff
 
-# ---------------------------------------
 # Charger un fichier spécifique dans /data
-# ---------------------------------------
+
 def load_file(filename):
     file_path = os.path.join("data", filename)
 
@@ -21,11 +20,10 @@ def load_file(filename):
 
 
 def run():
-    st.title("📊 Dashboard - Visualisation des données")
+    st.title("Dashboard - Visualisation des données")
 
-    # ---------------------------------------
-    # 🗂️ Liste des fichiers disponibles
-    # ---------------------------------------
+
+    # Liste des fichiers disponibles
     folder = "data"
     if not os.path.exists(folder):
         st.warning("Le dossier /data n'existe pas encore.")
@@ -37,26 +35,25 @@ def run():
         st.warning("Aucun fichier disponible dans /data.")
         return
 
-    st.subheader("📁 Choisir un fichier à visualiser")
+    st.subheader("Choisir un fichier à visualiser")
     selected_file = st.selectbox("Fichier disponible :", files)
 
-    # Charger le fichier choisi
+    # load file 
     df = load_file(selected_file)
 
     if df is None:
         st.error("Impossible de charger le fichier.")
         return
 
-    st.success(f"📂 Fichier chargé : {selected_file}")
+    st.success(f"Fichier chargé : {selected_file}")
     st.write("Aperçu des données :")
     st.dataframe(df.head())
 
     st.write("---")
-    st.subheader("🎛️ Options de visualisation")
+    st.subheader("Options de visualisation")
 
-    # ---------------------------------------
-    # Préparation des types de colonnes
-    # ---------------------------------------
+    # Preprocessing data and cleaning
+
     numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
     categorical_cols = df.select_dtypes(include=["object", "category"]).columns.tolist()
 
@@ -65,9 +62,8 @@ def run():
         ["Histogramme", "Bar Chart", "Pie Chart", "Heatmap de corrélation"]
     )
 
-    # --------------------------------------
+
     # HISTOGRAMME
-    # --------------------------------------
     if viz_type == "Histogramme":
         if not numeric_cols:
             st.error("Aucune colonne numérique disponible.")
@@ -76,16 +72,15 @@ def run():
             fig = px.histogram(df, x=col, nbins=30, title=f"Histogramme de {col}")
             st.plotly_chart(fig, use_container_width=True)
 
-    # --------------------------------------
     # BAR CHART
-    # --------------------------------------
+
     elif viz_type == "Bar Chart":
         if not categorical_cols:
             st.error("Aucune colonne catégorielle disponible.")
         else:
             col = st.selectbox("Choisir une colonne catégorielle :", categorical_cols)
 
-            # Préparation des données
+            # data preprocessing and loading 
             value_counts = df[col].value_counts().reset_index()
             value_counts.columns = ["category", "count"]  # évite l’erreur Plotly
 
@@ -98,10 +93,8 @@ def run():
             )
             st.plotly_chart(fig, use_container_width=True)
 
-
-    # --------------------------------------
     # PIE CHART
-    # --------------------------------------
+
     elif viz_type == "Pie Chart":
         if not categorical_cols:
             st.error("Aucune colonne catégorielle disponible.")
@@ -110,9 +103,8 @@ def run():
             fig = px.pie(df, names=col, title=f"Répartition de {col}")
             st.plotly_chart(fig, use_container_width=True)
 
-    # --------------------------------------
     # HEATMAP
-    # --------------------------------------
+
     elif viz_type == "Heatmap de corrélation":
         if len(numeric_cols) < 2:
             st.error("Besoin d'au moins 2 colonnes numériques pour une heatmap.")
