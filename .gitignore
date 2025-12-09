@@ -1,0 +1,91 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.conda/
+condaenv/
+*.egg-info/
+.eggs/
+
+# Pip / Poetry / Conda
+pip-wheel-metadata/
+poetry.lock
+poetry.toml
+*.egg
+*.whl
+
+# Byte-compiled / optimized / DLL files
+*.dll
+*.dylib
+*.a
+*.out
+
+# Logs
+*.log
+
+# -------------------------
+# Jupyter Notebook
+# -------------------------
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+*.ipynb~
+jupyter-cache/
+.jupyter/
+
+# Notebook metadata backups
+*~backup.ipynb
+
+# -------------------------
+# Streamlit
+# -------------------------
+.streamlit/secrets.toml  # highly recommended to ignore secrets
+.streamlit/**/*.log
+.streamlit/cache/
+.streamlit/state/
+
+# -------------------------
+# OS / Editor Specific
+# -------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# VS Code
+.vscode/
+.code-workspace
+
+# PyCharm
+.idea/
+
+
+# -------------------------
+# Misc
+# -------------------------
+# Environment variables
+.env
+.env.*
+*.env
+
+# Temporary files
+tmp/
+temp/
+*.tmp
