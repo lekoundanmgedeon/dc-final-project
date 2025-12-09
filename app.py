@@ -2,10 +2,14 @@ import streamlit as st
 
 # --- CONFIG ---
 st.set_page_config(
-    page_title="Mon App",
+    page_title="CollectToolsBox | DC Final",
     layout="wide",
+    page_icon="assets/images.jpeg",
     initial_sidebar_state="expanded"
 )
+
+
+
 
 # --- SIDEBAR ---
 st.sidebar.title("📌 Menu")
@@ -48,3 +52,5 @@ elif menu == "⚙️ Settings":
 
 elif menu == "❓ About":
     about.run()
+
+
