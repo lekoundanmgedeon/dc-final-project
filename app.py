@@ -27,12 +27,12 @@ menu = st.sidebar.radio(
 )
 
 # --- IMPORT DES PAGES ---
-import pages.home as home
-import pages.dashboard as dashboard
-import pages.scraping as scraping
-import pages.data as data
-import pages.settings as settings
-import pages.about as about
+import modules.home as home
+import modules.dashboard as dashboard
+import modules.scraping as scraping
+import modules.data as data
+import modules.settings as settings
+import modules.about as about
 
 # --- ROUTING ---
 if menu == "🏠 Home":
